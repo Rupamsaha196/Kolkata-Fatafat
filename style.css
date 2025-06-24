@@ -1,0 +1,59 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.date-section {
+  background: #fff;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.date-title {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  text-align: center;
+}
+
+.number, .result {
+  font-size: 16px;
+  padding: 6px;
+}
+
+.result {
+  background-color: #fffbcc;
+  font-weight: bold;
+}
+
+/* Highlight the latest result */
+.latest {
+  border: 2px solid #d60000;
+  background-color: #fff0f0;
+}
+
+.latest .date-title {
+  color: #d60000;
+  font-size: 20px;
+}
+.main-heading {
+  text-align: center;
+  font-size: 32px;
+  color: #d60000;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
