@@ -1,6 +1,6 @@
 const sheetID = "145IDf49cSt3E8BrZdTOqu8GgCasYkoZGkbLpS4bKHIk";
-const sheetName = "Kolkatafatafat";
-const url = `https://docs.google.com/spreadsheets/d/1M2YIKoB8lrd4fPVA0CBj4m1wRLcoiGE6rxwlRnELK08/gviz/tq?tqx=out:json&sheet=1`;
+const sheetName = "1";
+const url = `https://docs.google.com/spreadsheets/d/17FC1HWK8lAQhPhnHv8jSgJWavmVtNwcULJ7HCZ4w6G4/gviz/tq?tqx=out:json&sheet=1`;
 
 fetch(url)  // ✅ This returns a Promise, so we can use .then()
   .then(res => res.text())
