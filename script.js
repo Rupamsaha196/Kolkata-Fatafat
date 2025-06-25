@@ -1,8 +1,8 @@
-const sheetID = "145IDf49cSt3E8BrZdTOqu8GgCasYkoZGkbLpS4bKHIk";
-const sheetName = "1";
+const sheetID = "145IDf49cSt3E8BrZdTOqu8GgCasYkoZGkbLpS4bKHIk";  // Replace with your new ID if needed
+const sheetName = "1";  // Match this to your Sheet tab name
 const url = `https://docs.google.com/spreadsheets/d/17FC1HWK8lAQhPhnHv8jSgJWavmVtNwcULJ7HCZ4w6G4/gviz/tq?tqx=out:json&sheet=1`;
 
-fetch(url)  // ✅ This returns a Promise, so we can use .then()
+fetch(url)
   .then(res => res.text())
   .then(data => {
     const json = JSON.parse(data.substr(47).slice(0, -2));
@@ -15,14 +15,13 @@ fetch(url)  // ✅ This returns a Promise, so we can use .then()
 
       const dateDiv = document.createElement("div");
       dateDiv.className = "date-section";
-
       if (index === 0) {
         dateDiv.classList.add("latest");
       }
 
+      // Format and show date
       const dateTitle = document.createElement("div");
       dateTitle.className = "date-title";
-
       const dateObj = new Date(cells[0].f || cells[0].v);
       const day = String(dateObj.getDate()).padStart(2, "0");
       const month = String(dateObj.getMonth() + 1).padStart(2, "0");
@@ -30,9 +29,9 @@ fetch(url)  // ✅ This returns a Promise, so we can use .then()
       const formattedDate = `${day}/${month}/${year}`;
       dateTitle.textContent = formattedDate;
 
+      // Grid of numbers
       const numberRow = document.createElement("div");
       numberRow.className = "result-grid";
-
       const resultRow = document.createElement("div");
       resultRow.className = "result-grid";
 
@@ -48,9 +47,16 @@ fetch(url)  // ✅ This returns a Promise, so we can use .then()
         resultRow.appendChild(res);
       }
 
+      // Jackpot row
+      const jackpot = document.createElement("div");
+      jackpot.className = "jackpot";
+      jackpot.textContent = `Jackpot: ${cells[19]?.v || "-"}`;
+
+      // Append everything
       dateDiv.appendChild(dateTitle);
       dateDiv.appendChild(numberRow);
       dateDiv.appendChild(resultRow);
+      dateDiv.appendChild(jackpot);
       container.appendChild(dateDiv);
     });
   })

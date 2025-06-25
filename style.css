@@ -9,12 +9,21 @@ body {
   margin: auto;
 }
 
+.main-heading {
+  text-align: center;
+  font-size: 32px;
+  color: #d60000;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
 .date-section {
   background: #fff;
   border: 1px solid #ccc;
   margin-bottom: 20px;
-  padding: 15px;
+  padding: 10px;
   border-radius: 5px;
+  overflow: hidden;
 }
 
 .date-title {
@@ -26,13 +35,16 @@ body {
 
 .result-grid {
   display: grid;
-  grid-template-columns: repeat(9, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+  gap: 5px;
   text-align: center;
+  word-break: break-word;
 }
 
 .number, .result {
   font-size: 16px;
   padding: 6px;
+  min-width: 30px;
 }
 
 .result {
@@ -40,7 +52,6 @@ body {
   font-weight: bold;
 }
 
-/* Highlight the latest result */
 .latest {
   border: 2px solid #d60000;
   background-color: #fff0f0;
@@ -50,10 +61,28 @@ body {
   color: #d60000;
   font-size: 20px;
 }
-.main-heading {
+
+/* 📱 Responsive tweaks for small screens */
+@media (max-width: 600px) {
+  .result-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .number, .result {
+    font-size: 14px;
+    padding: 4px;
+  }
+
+  .date-title {
+    font-size: 16px;
+  }
+}
+.jackpot {
   text-align: center;
-  font-size: 32px;
-  color: #d60000;
+  background-color: #e0ffe0;
+  color: #006600;
   font-weight: bold;
-  margin-bottom: 30px;
+  padding: 8px;
+  margin-top: 8px;
+  border-radius: 4px;
 }
